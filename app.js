@@ -60,7 +60,7 @@ app.use((req, res) => {
 
 mongoose
   .connect(
-    "mongodb+srv://chaithanyakumar167:Chaithanya167@cluster0.8jnsblk.mongodb.net/Expense_Tracker?retryWrites=true&w=majority&appName=Cluster0"
+    `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.8jnsblk.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`
   )
   .then(() => {
     app.listen(process.env.PORT || 4000);

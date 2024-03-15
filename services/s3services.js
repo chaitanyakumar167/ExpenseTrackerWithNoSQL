@@ -6,6 +6,7 @@ const uploadToS3 = (data, filename) => {
     accessKeyId: process.env.IAM_USER_KEY,
     secretAccessKey: process.env.IAM_USER_SECRET,
   });
+  console.log(s3bucket)
 
   let params = {
     Bucket: process.env.BUCKET_NAME,
@@ -13,6 +14,7 @@ const uploadToS3 = (data, filename) => {
     Body: data,
     ACL: "public-read",
   };
+  console.log(params)
   return new Promise((resolve, reject) => {
     s3bucket.upload(params, (err, s3response) => {
       if (err) {
@@ -23,5 +25,8 @@ const uploadToS3 = (data, filename) => {
     });
   });
 };
+
+
+
 
 module.exports = { uploadToS3 };

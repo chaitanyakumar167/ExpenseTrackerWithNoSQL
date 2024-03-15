@@ -18,7 +18,7 @@ exports.showLeaderBoard = async (req, res) => {
 
 exports.downloadExpenses = async (req, res) => {
   try {
-    const expenses = await Expense.find({userId:req.user._id});
+    const expenses = await Expense.find({userId:req.user._id}).select("-_id amount description category");
     const stringifiedExpenses = JSON.stringify(expenses);
     const userId = req.user.id;
     const filename = `Expenses${userId}/${new Date()}.txt`;

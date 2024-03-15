@@ -1,7 +1,7 @@
 const form = document.getElementById("form");
 const submitbtn = document.getElementById("submit");
 const email = document.getElementById("email");
-const URL='http://16.171.209.167:4000'
+const URL='http://localhost:4000'
 
 
 form.addEventListener("submit", async function (e) {

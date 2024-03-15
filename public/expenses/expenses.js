@@ -180,7 +180,7 @@ function showLeaderBoard(obj) {
   leaderBoardList.appendChild(li);
 }
 
-if (localStorage.getItem("pro") !== null) {
+if (localStorage.getItem("pro") === null) {
   download.disabled = true;
   btnDownloadHistory.disabled = true;
   DownloadHistoryContainer.style.display = "none";
